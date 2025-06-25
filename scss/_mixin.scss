@@ -1,0 +1,12 @@
+// map:複数の設定をまとめたもの
+$breakpoints:(
+    'sp': 'screen and (max-width: 599px)',
+    'tab': 'screen and (max-width: 1024px)',
+    'pc': 'screen and (max-width: 1025px)'
+    );  
+// mp（サイズ指定）でメディアクエリを呼び出せるように    
+@mixin mq($size){
+    @media #{map-get($breakpoints, $size)} {
+        @content;
+    }
+}
